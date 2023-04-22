@@ -27,6 +27,10 @@ local Request = (syn and syn.request) or request or (https and https.request) or
     return Response
 end
 
+local Queue_on_teleport = (syn and syn.queue_on_teleport) or queue_on_teleport or queueonteleport or function(...)
+    debug_SendOutput("Function: 'queue_on_teleport' is nil")
+end
+
 --// Folders \\--
 local Monsters                =  workspace["Folders"]:WaitForChild("Monsters")
 
@@ -426,14 +430,14 @@ task.spawn(function()
     local TeleportState = Enum.TeleportState
 
     LocalPlayer.OnTeleport:Connect(function(State)
-        if (not Settings.AutoRetry) then return end
-        if (State == TeleportState.InProgress) then
-            local Queue_on_teleport = (syn and syn.queue_on_teleport) or queue_on_teleport or queueonteleport or function(...)
-                debug_SendOutput("Function: 'queue_on_teleport' is nil")
-            end
-            local SettingsString = [[getgenv().Settings = { AutoFarm = ]]..tostring(Settings.AutoFarm)..[[, AutoRetry = ]]..tostring(Settings.AutoRetry)..[[, Webhook = { Enabled = ]]..tostring(Settings.Webhook.Enabled)..[[, Url = ]]..Settings.Webhook.Url..[[, } \n]]
+        if (State == TeleportState.Started) then
+            OtherSettings.Executed = false
+
+            local SettingsString = [[getgenv().Settings = { AutoFarm = ]]..tostring(Settings.AutoFarm)..[[, AutoRetry = ]]..tostring(Settings.AutoRetry)..[[, Webhook = { Enabled = ]]..tostring(Settings.Webhook.Enabled)..[[, Url = "]]..Settings.Webhook.Url..[[", }}]].."\n\n"
             local Source = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostDuckyy/Roblox-Projects/main/Anime%20Dimensions%20Simulator/source.lua", true))("💀")]]
-            Queue_on_teleport(SettingsString..Source)
+            local Load = tostring(SettingsString..Source)
+
+            Queue_on_teleport(Load)
         end
     end)
 end)
@@ -656,6 +660,7 @@ Tabs["Misc"]:CreateButton( {
     Name = "Abort Script",
     Callback = function()
         Toggles.Enaled_AutoFarm:Set(false)
+        Toggles.Enaled_AutoRetry:Set(false)
         Toggles.Enaled_Webhook:Set(false)
 
         OtherSettings.Executed = false
