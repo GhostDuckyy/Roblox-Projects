@@ -25,14 +25,16 @@ Made by `GhostyDuckyy#7698`, Game: [Anime Dimensions Simulator](https://roblox.c
 2. Enjoy! 💖
 ### Settings ⚙️
 Configuration of script
+- `AutoLoad`: Boolean - Auto load script.
 - `AutoFarm`: Boolean - **Enable** / **Disable** [script](https://github.com/GhostDuckyy/GhostDuckyy/blob/main/Projects/Anime%20Dimensions%20Simulator/ReadMe.md#loadstring-).
 - `AutoRetry`: Boolean - Retry Dimension.
 - `Webhook`: Table - `Enabled`(Boolean) is **enable** / **disable** this feature, `Url` (String) replace with webhook ([Discord](https://discord.com/)) url.
 ### Loadstring 🌐
 ```lua
 getgenv().Settings = {
-	AutoFarm  	  =  	true,
-	AutoRetry  	  =  	true,
+	AutoLoad 	  =    true,
+	AutoFarm  	  =    true,
+	AutoRetry  	  =    true,
 	Webhook      = 	{Enabled = false, Url = "https://discord.com/api/webhooks/example/tokens"},
 }
 
