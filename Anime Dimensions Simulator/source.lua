@@ -42,6 +42,7 @@ local MainRemoteFunction      =  ReplicatedStorage["RemoteFunctions"]:WaitForChi
 getgenv().CurrentTween = nil
 
 getgenv().Settings = (type(getgenv().Settings) == "table" and Settings) or {
+    AutoLoad        =   true,
     AutoFarm        =   false,
     AutoRetry       =   false,
     Webhook         =   {Enabled = false, Url = "https://discord.com/api/webhooks/example/tokens"},
@@ -52,7 +53,7 @@ getgenv().OtherSettings = (getgenv().OtherSettings and OtherSettings) or {
     PostedResult    =   false,
     Executed        =   false,
     IsHooked        =   false,
-    ConnectedOnTeleport  =  false,
+    RunAutoLoad     =   false,
 }
 
 getgenv().ResultTable = (type(getgenv().ResultTable) == "table" and ResultTable) or {
@@ -423,24 +424,16 @@ task.spawn(function()
 end)
 
 --// Auto Load \\--
-task.spawn(function()
-    if (OtherSettings.ConnectedOnTeleport) then return end
-    OtherSettings.ConnectedOnTeleport = true
+if (Settings.AutoLoad and not OtherSettings.RunAutoLoad) then
+    OtherSettings.RunAutoLoad = true
 
-    local TeleportState = Enum.TeleportState
+    local SettingsString = [[getgenv().Settings = { AutoLoad = ]]..tostring(Settings.AutoLoad)..[[, AutoFarm = ]]..tostring(Settings.AutoFarm)..[[, AutoRetry = ]]..tostring(Settings.AutoRetry)..[[, Webhook = { Enabled = ]]..tostring(Settings.Webhook.Enabled)..[[, Url = "]]..tostring(Settings.Webhook.Url)..[[", }}]].."\n"
+    local WaitString = [[task.wait(2)]].."\n"
+    local Source = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostDuckyy/Roblox-Projects/main/Anime%20Dimensions%20Simulator/source.lua", true))("💀")]]
+    local Load = tostring(SettingsString..WaitString..Source)
 
-    LocalPlayer.OnTeleport:Connect(function(State)
-        if (State == TeleportState.Started) then
-            OtherSettings.Executed = false
-
-            local SettingsString = [[getgenv().Settings = { AutoFarm = ]]..tostring(Settings.AutoFarm)..[[, AutoRetry = ]]..tostring(Settings.AutoRetry)..[[, Webhook = { Enabled = ]]..tostring(Settings.Webhook.Enabled)..[[, Url = "]]..Settings.Webhook.Url..[[", }}]].."\n\n"
-            local Source = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostDuckyy/Roblox-Projects/main/Anime%20Dimensions%20Simulator/source.lua", true))("💀")]]
-            local Load = tostring(SettingsString..Source)
-
-            Queue_on_teleport(Load)
-        end
-    end)
-end)
+    Queue_on_teleport(Load)
+end
 
 --// Rayfield | Sirius Team \\--
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
