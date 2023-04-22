@@ -423,9 +423,11 @@ task.spawn(function()
     if (OtherSettings.ConnectedOnTeleport) then return end
     OtherSettings.ConnectedOnTeleport = true
 
+    local TeleportState = Enum.TeleportState
+
     LocalPlayer.OnTeleport:Connect(function(State)
         if (not Settings.AutoRetry) then return end
-        if (State == Enum.TeleportState.Started) then
+        if (State == TeleportState.InProgress) then
             local Queue_on_teleport = (syn and syn.queue_on_teleport) or queue_on_teleport or queueonteleport or function(...)
                 debug_SendOutput("Function: 'queue_on_teleport' is nil")
             end
