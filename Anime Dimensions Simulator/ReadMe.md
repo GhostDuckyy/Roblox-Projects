@@ -26,7 +26,7 @@ Made by `GhostyDuckyy#7698`, Game: [Anime Dimensions Simulator](https://roblox.c
 ### Settings ⚙️
 Configuration of script
 - `AutoFarm`: Boolean - **Enable** / **Disable** [script](https://github.com/GhostDuckyy/GhostDuckyy/blob/main/Projects/Anime%20Dimensions%20Simulator/ReadMe.md#loadstring-).
-- `AutoRetry`: Boolean - Retry Dimensions & Auto Load [script](https://github.com/GhostDuckyy/GhostDuckyy/blob/main/Projects/Anime%20Dimensions%20Simulator/ReadMe.md#loadstring-).
+- `AutoRetry`: Boolean - Retry Dimensions.
 - `Webhook`: Table - `Enabled`(Boolean) is **enable** / **disable** this feature, `Url` (String) replace with webhook ([Discord](https://discord.com/)) url.
 ### Loadstring 🌐
 ```lua
