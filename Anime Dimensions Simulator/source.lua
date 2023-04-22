@@ -429,7 +429,7 @@ task.spawn(function()
             local Queue_on_teleport = (syn and syn.queue_on_teleport) or queue_on_teleport or queueonteleport or function(...)
                 debug_SendOutput("Function: 'queue_on_teleport' is nil")
             end
-            local SettingsString = [[getgenv().Settings = { AutoFarm = ]]..Settings.AutoFarm..[[, AutoRetry = ]]..Settings.AutoRetry..[[, Webhook = { Enabled = ]]..Settings.Webhook.Enabled..[[, Url = ]]..Settings.Webhook.Url..[[, } \n]]
+            local SettingsString = [[getgenv().Settings = { AutoFarm = ]]..tostring(Settings.AutoFarm)..[[, AutoRetry = ]]..tostring(Settings.AutoRetry)..[[, Webhook = { Enabled = ]]..tostring(Settings.Webhook.Enabled)..[[, Url = ]]..Settings.Webhook.Url..[[, } \n]]
             local Source = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostDuckyy/Roblox-Projects/main/Anime%20Dimensions%20Simulator/source.lua", true))("💀")]]
             Queue_on_teleport(SettingsString..Source)
         end
