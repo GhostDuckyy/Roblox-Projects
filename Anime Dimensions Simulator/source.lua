@@ -642,7 +642,7 @@ Tabs["Main"]:CreateInput( {
         if (matchUrl(Settings.Webhook.Url)) then
             Webhook_Status:Set("Webhook Status is Vaild")
         else
-            Webhook_Status:Set("Webhook Status is Vaild")
+            Webhook_Status:Set("Webhook Status is Invaild")
         end
     end,
 } )
