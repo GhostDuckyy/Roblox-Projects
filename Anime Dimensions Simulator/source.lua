@@ -454,6 +454,8 @@ local Tabs = {
 local Toggles = {}
 
 --// Source \\--
+Rayfield:Notify({ Image = "11745872952", Title = "Warning", Content = "Abort Script at Misc tab.\nDon't use Rayfield build-in close button!" })
+
 Tabs["Main"]:CreateSection("Auto Farm")
 
 Toggles["Enaled_AutoFarm"] = Tabs["Main"]:CreateToggle( {
