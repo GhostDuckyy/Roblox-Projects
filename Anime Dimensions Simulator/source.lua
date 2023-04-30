@@ -539,7 +539,7 @@ Toggles["Enaled_AutoFarm"] = Tabs["Main"]:CreateToggle( {
                             Root.Anchored = false
                             debug_SendOutput("MoveTo: "..Enemy.Name.."\n")
 
-                            if (distance <= 20) then
+                            if (distance <= 40) then
                                 Tween(18, {CFrame = CFrame.lookAt(EnemyCFrame.Position + Vector3.new(0, 4, 0), EnemyCFrame.Position) })
                             else
                                 Tween(160, {CFrame = CFrame.lookAt(EnemyCFrame.Position + Vector3.new(0, 4, 0), EnemyCFrame.Position) })
