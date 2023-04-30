@@ -2,6 +2,8 @@
 Made by `GhostyDuckyy#7698`, Game: [Anime Dimensions Simulator](https://roblox.com/games/6938803436/)
 ## Notes 🗒️
 1. Don't look the source, i tried my best to beautiful it (hopefully don't hurt ur eyes). 🤍
+
+(Sometimes would stuck, just re-enabled autofarm 💀)
 ## Supported Exploits 🗃️
 ### 📊 Status
 1. ✅ - Working
