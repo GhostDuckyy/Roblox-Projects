@@ -23,12 +23,12 @@ Made by `GhostyDuckyy#7698`, Game: [Anime Dimensions Simulator](https://roblox.c
 - Added Rayfield as gui
 ```
 ## How to use ❓
-1. Run [script](https://github.com/GhostDuckyy/GhostDuckyy/blob/main/Projects/Anime%20Dimensions%20Simulator/ReadMe.md#loadstring-) in Dimensions / Raids / Boss Rush / Time Challenge.
+1. Run [script](https://github.com/GhostDuckyy/Roblox-Projects/tree/main/Anime%20Dimensions%20Simulator#loadstring-) in Dimensions / Raids / Boss Rush / Time Challenge.
 2. Enjoy! 💖
 ### Settings ⚙️
 Configuration of script
 - `AutoLoad`: Boolean - Auto load script.
-- `AutoFarm`: Boolean - **Enable** / **Disable** [script](https://github.com/GhostDuckyy/GhostDuckyy/blob/main/Projects/Anime%20Dimensions%20Simulator/ReadMe.md#loadstring-).
+- `AutoFarm`: Boolean - **Enable** / **Disable** [script](https://github.com/GhostDuckyy/Roblox-Projects/tree/main/Anime%20Dimensions%20Simulator#loadstring-).
 - `AutoRetry`: Boolean - Retry Dimension.
 - `Webhook`: Table - `Enabled`(Boolean) is **enable** / **disable** this feature, `Url` (String) replace with webhook ([Discord](https://discord.com/)) url.
 ### Loadstring 🌐
