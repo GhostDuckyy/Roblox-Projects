@@ -1,7 +1,7 @@
 # ReadMe
 Made by `GhostyDuckyy#7698`, Game: [Anime Dimensions Simulator](https://roblox.com/games/6938803436/)
 # Warning ⚠️
-I can't update script until sploits is unpatch byfron!!!
+I can't update script until sploits is bypass byfron!!!
 (Sometimes would stuck, just re-enabled autofarm 💀)
 ## Supported Exploits 🗃️
 ### 📊 Status
