@@ -1,3 +1,4 @@
+return warn("Wait exploits update!")
 --// Checks \\--
 local BlackList_IDs = {6938803436, 7338881230, 6990131029, 6990133340} -- Lobby, Raid Lobby, AFK Lobby, Character Testing
 if table.find(BlackList_IDs, game.PlaceId) then return end
